@@ -1,0 +1,37 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "Express templte: Plantilla para empezar cualquier proyecto en Nodejs con el framework Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimelorobert/express-template.git"
+  },
+  "keywords": [
+    "Express",
+    "template"
+  ],
+  "author": "Robert Hernandez <airbusjayrobert@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimelorobert/express-template/issues"
+  },
+  "homepage": "https://github.com/dimelorobert/express-template#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-promise-router": "^4.0.1",
+    "swagger": "^0.7.5"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
