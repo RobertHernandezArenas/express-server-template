@@ -2,7 +2,7 @@
 
 //////////////// Modulos a usar /////////////////////////
 // Variables de entorno
-require('dotenv').config();
+require("dotenv").config();
 const { PORT, APP_ENV, NODE_ENV } = process.env;
 
 // Framework con el que manejaremos node
@@ -16,6 +16,8 @@ const bodyParser = require("body-parser");
 
 // Modulo que se encarga de asegurarnos de crear el path correcto en nuestra app
 const path = require("path");
+
+// Modulo que nos permitira subir archivos a nuestra api
 const fileUpload = require("express-fileupload");
 
 console.log("FROM APP_ENV::::>", APP_ENV, "FROM NODE_ENV:::::>", NODE_ENV);
@@ -24,14 +26,16 @@ console.log("FROM APP_ENV::::>", APP_ENV, "FROM NODE_ENV:::::>", NODE_ENV);
 // Aqui modulo base de datos //
 ///////////////////////////////
 
+// app de express
 const app = express();
-const morgan = require("morgan");
-const cors = require("cors");
 
 // Log de todas las peticiones que se realiza a la API con su respectivo estatus
-app.use(morgan("dev"));
+const morgan = require("morgan");
 
 // Permite todos los verbos de las peticiones a la API sin ningguna restricción
+const cors = require("cors");
+
+app.use(morgan("dev"));
 app.use(cors());
 
 /////////////////// MIDDLEWARES //////////////////////////
@@ -44,7 +48,7 @@ app.use(
 );
 
 // Carpeta donde se alojaran todos los archivos publicos de la api
-const publicFolder = path.join(__dirname, "public");
+const publicFolder = path.join(__dirname, `../public`);
 app.use(express.static(publicFolder));
 
 // Modulo que permite subir archivos a la api
